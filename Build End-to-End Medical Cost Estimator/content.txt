@@ -1,0 +1,120 @@
+## 📌 Project:
+
+**Medical Cost Estimator: An End-to-End Regression-Based Health Insurance Premium Prediction System**
+
+---
+
+## 🧠 Project Summary:
+
+This project presents a complete supervised machine learning pipeline to predict individual medical insurance costs based on demographic and health-related attributes. By leveraging multiple regression models and deploying a user-friendly web application, it demonstrates a practical and explainable AI solution in the **health insurance domain**.
+
+---
+
+## 🎯 Problem Statement:
+
+Insurance companies need accurate premium estimation tools to assess the expected cost of medical services for individuals. This helps in pricing policies fairly and managing risk. The goal is to build a predictive model that estimates insurance charges using user-specific information like age, BMI, smoking status, and region.
+
+---
+
+## 📊 Dataset:
+
+* **Source**: [Kaggle – Medical Cost Personal Dataset](https://www.kaggle.com/mirichoi0218/insurance)
+* **Size**: 1,300+ records
+* **Features**:
+
+  * `age`: Age of the person
+  * `sex`: Male or Female
+  * `bmi`: Body mass index
+  * `children`: Number of children
+  * `smoker`: Smoking status
+  * `region`: Residential area
+  * `charges`: **Target** – Individual medical cost billed by health insurance
+
+---
+
+## ✅ Key Steps:
+
+### 1. 🔍 Exploratory Data Analysis (EDA)
+
+* Data visualization (distribution plots, correlation heatmap)
+* Outlier detection (e.g., high BMI + smoker = high cost)
+
+### 2. 🧼 Data Preprocessing
+
+* Categorical encoding (e.g., one-hot for `region`, binary for `smoker`)
+* Feature scaling using `StandardScaler`
+* Train-test split (e.g., 80/20)
+
+### 3. 🧠 Model Training & Comparison
+
+Trained and compared several regression algorithms:
+
+* **Linear Regression**
+* **Ridge & Lasso Regression**
+* **Random Forest Regressor**
+* **XGBoost Regressor**
+* **Support Vector Regressor (SVR)**
+
+### 4. 📈 Evaluation Metrics
+
+Used multiple regression performance metrics:
+
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+* R² Score
+* Adjusted R² Score (bonus)
+
+### 5. 🔍 Model Interpretability
+
+* Applied **SHAP** (SHapley Additive exPlanations) to interpret how features (e.g., smoker, BMI) influence premium cost
+
+---
+
+## 🌐 Deployment:
+
+### ✅ Web Interface:
+
+* Built a **Streamlit** web application to input user details and get predicted insurance charges
+* Displayed model probabilities, SHAP plots, and input-driven insights
+
+### ✅ Dockerization:
+
+* Created a `Dockerfile` to containerize the app for local and cloud deployment
+* App can be hosted on:
+
+  * **Streamlit Cloud**
+  * **GCP Cloud Run**
+  * **AWS EC2 / Elastic Beanstalk**
+  * **Render**
+
+---
+
+## 📁 Project Structure:
+
+```
+medical-cost-predictor/
+├── app/
+│   └── streamlit_app.py
+├── data/
+│   └── insurance.csv
+├── models/
+│   └── final_model.pkl
+│   └── scaler.pkl
+├── notebooks/
+│   └── EDA.ipynb
+│   └── Model_Training.ipynb
+├── Dockerfile
+├── requirements.txt
+├── README.md
+```
+
+---
+
+## 🧠 Key Takeaways:
+
+* Demonstrated ability to solve real-world regression problems using supervised ML
+* Applied model comparison and hyperparameter tuning
+* Built explainable models using SHAP
+* Packaged and deployed the model for public use
+
+
